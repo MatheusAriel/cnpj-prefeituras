@@ -22,7 +22,6 @@ def estados(url, file):
         print('ERRO LISTA MUNICIPIOS ESTADOS', traceback.print_exc(), '\n')
         pass
 
-
 def municipios(url, file):
     link_completo = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
     response2 = requests.get(link_completo)
