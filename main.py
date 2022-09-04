@@ -7,7 +7,6 @@ import traceback
 
 z = 1
 
-
 def estados(url, file):
     try:
         url1 = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
@@ -74,6 +73,7 @@ def prefeituras(url, file):
         except:
             print('ERRO AO OBTER DADOS DA PREFEITURA', traceback.print_exc(), '\n')
             pass
+
 def get_prefeituras():
     with open('prefeituras.csv', 'w+', encoding='UTF8', newline='') as file:
         url0 = 'https://cnes2.datasus.gov.br/Lista_Tot_Es_Estado_Mantenedora.asp'
