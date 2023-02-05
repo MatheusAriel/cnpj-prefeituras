@@ -7,6 +7,7 @@ import traceback
 
 z = 1
 
+
 def estados(url, file):
     try:
         url1 = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
@@ -21,6 +22,7 @@ def estados(url, file):
     except:
         print('ERRO LISTA MUNICIPIOS ESTADOS', traceback.print_exc(), '\n')
         pass
+
 
 def municipios(url, file):
     link_completo = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
@@ -39,7 +41,7 @@ def municipios(url, file):
 
 def prefeituras(url, file):
     url = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
-    if ('PREFEITURA' in url or 'PREF' in url or 'MUNICIPIO' in url) and 'FUNDO' not in url:
+    if ('PREFEITURA' or 'Pref' or 'MUNICIPIO' in url) and 'FUNDO' not in url:
         try:
             global z
             print(url, z)
@@ -72,6 +74,7 @@ def prefeituras(url, file):
         except:
             print('ERRO AO OBTER DADOS DA PREFEITURA', traceback.print_exc(), '\n')
             pass
+
 
 def get_prefeituras():
     with open('prefeituras.csv', 'w+', encoding='UTF8', newline='') as file:
