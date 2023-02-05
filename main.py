@@ -21,8 +21,6 @@ def estados(url, file):
 
     except:
         print('ERRO LISTA MUNICIPIOS ESTADOS', traceback.print_exc(), '\n')
-        pass
-
 
 def municipios(url, file):
     link_completo = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
@@ -36,8 +34,6 @@ def municipios(url, file):
             prefeituras(url, file)
     except:
         print('ERRO LISTA DE MUNICIPIOS', traceback.print_exc(), '\n')
-        pass
-
 
 def prefeituras(url, file):
     url = ('https://cnes2.datasus.gov.br/' + url['href']).replace(' ', '')
@@ -73,8 +69,6 @@ def prefeituras(url, file):
                 i += 1
         except:
             print('ERRO AO OBTER DADOS DA PREFEITURA', traceback.print_exc(), '\n')
-            pass
-
 
 def get_prefeituras():
     with open('prefeituras.csv', 'w+', encoding='UTF8', newline='') as file:
